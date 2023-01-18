@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "UyyA6cOWdkybLG4CLZPubYX6lp/vunJGROxIbOlo/N4eJ4spMetFhiCXJTyBw2dStCj++lDiTvtD357a/afb6w==",
+  "dgSpecHash": "ghU/kf4XQoiJiLuOVj/Dx1jfcPgDE/gy9ximAQF9fXoZ/Ov1AKuF9vQnA8q/iV2La0oQ4PBh9sMeqtjcmHDvaw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rocky\\OneDrive\\Desktop\\DAW\\Servidor\\AA\\HolidayConsole\\HolidayConsole.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "c:\\Users\\rocky\\OneDrive\\Desktop\\DAW\\Servidor\\AA\\HolidayConsole\\HolidayConsole.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\rocky\\.nuget\\packages\\spectre.console\\0.45.0\\spectre.console.0.45.0.nupkg.sha512",
+    "C:\\Users\\rocky\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512"
+  ],
   "logs": []
 }
