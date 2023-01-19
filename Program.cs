@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace Program {
+    using Spectre.Console;
+    using Classes;
+
+    class Program {
+
+        static void Main(string[] args) {
+            Menu menu = new Menu();
+            menu.ShowMenu();
+        }
+    }
+}
