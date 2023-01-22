@@ -11,6 +11,7 @@ RUN dotnet publish -c Release -o out
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /Practicas
+EXPOSE 6216
 COPY --from=build-env /App/out .
 ENTRYPOINT ["dotnet", "HolidayConsole.dll"]
 #ENTRYPOINT ["/bin/bash"]
