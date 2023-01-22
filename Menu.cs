@@ -113,7 +113,7 @@ namespace Program {
                         break;
                     case 6:
                         if (currentUser.Username != "") {
-                            bookingService.ShowBookings(allBookings);
+                            bookingService.ShowBookings(allBookings, currentUser);
                         } else {
                             AnsiConsole.Markup($"[bold red]La opción pedida no está disponible[/]");
                             Console.WriteLine();
