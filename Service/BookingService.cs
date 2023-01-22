@@ -7,7 +7,7 @@ namespace Service {
         TripService tripService = new TripService();
         Utils utils = new Utils();
 
-        public void ShowBookings(List<Booking> allBookings) {
+        public void ShowBookings(List<Booking> allBookings, User currentUser) {
             Console.WriteLine($"{System.Environment.NewLine}");
             AnsiConsole.Markup("[bold aquamarine1]MIS RESERVAS[/]");
             Console.WriteLine($"{System.Environment.NewLine}");
@@ -21,7 +21,9 @@ namespace Service {
             table.AddColumn("Precio final");
 
             foreach (Booking booking in allBookings) {
-                table.AddRow($"{booking.Code}", $"{booking.BookingDate.ToString("dd/MM/yyyy")}", $"{booking.User.Name}", $"{booking.Trip.Destination}", $"{booking.Trip.StartDate.ToString("dd/MM/yyyy")}", $"{booking.Trip.EndDate.ToString("dd/MM/yyyy")}", $"{booking.FinalPrice}");
+                if (booking.User.Username == currentUser.Username ) {
+                    table.AddRow($"{booking.Code}", $"{booking.BookingDate.ToString("dd/MM/yyyy")}", $"{booking.User.Name}", $"{booking.Trip.Destination}", $"{booking.Trip.StartDate.ToString("dd/MM/yyyy")}", $"{booking.Trip.EndDate.ToString("dd/MM/yyyy")}", $"{booking.FinalPrice}");
+                }
             }
             AnsiConsole.Write(table);
             Console.WriteLine();
