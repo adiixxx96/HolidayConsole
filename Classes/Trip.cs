@@ -4,7 +4,7 @@ namespace Classes {
 
     public class Trip {
 
-        public static int TripId = 1;
+        public int TripId {get; set;}
 
         public string Destination {get; set;}
 
@@ -17,10 +17,9 @@ namespace Classes {
         public int AvailableSpots {get; set;}
 
         public Boolean IsFull {get; set;}
-
         
         public Trip(string Destination, DateTime StartDate, DateTime EndDate, decimal Price, int AvailableSpots) {
-            TripId++;
+            TripId = GenerateId(2);
             this.Destination = Destination;
             this.StartDate = StartDate;
             this.EndDate = EndDate;
@@ -34,6 +33,23 @@ namespace Classes {
                 IsFull = true;
             }
         }
+
+        public int GenerateId(int codeLength) {
+            int id = 0;
+            string result = ""; 
+            string pattern = "0123456789";
+    
+            Random myRndGenerator = new Random((int)DateTime.Now.Ticks);
+
+            for(int i=0; i < codeLength; i++) {
+                int mIndex = myRndGenerator.Next(pattern.Length);
+                result += pattern[mIndex];
+            }
+
+            id = Int32.Parse(result);
+            return id;
+        }
+
     }
 
 }

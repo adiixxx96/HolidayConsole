@@ -4,7 +4,7 @@ namespace Classes {
 
     public class User {
 
-        public static int UserId = 1;
+        public int UserId {get; set;}
 
         public string Name {get; set;}
         
@@ -14,7 +14,7 @@ namespace Classes {
 
         public DateTime CreationDate {get; set;}
 
-        public Boolean active {get; set;}
+        public Boolean Active {get; set;}
 
         public User() {
             Name="";
@@ -23,12 +23,28 @@ namespace Classes {
         }
 
         public User(String Name, String Username, String Password) {
-            UserId++;
+            UserId = GenerateId(3);
             this.Name=Name;
             this.Username=Username;
             this.Password=Password;
             CreationDate=DateTime.Now;
-            active=true;
+            Active=true;
+        }
+
+        public int GenerateId(int codeLength) {
+            int id = 000;
+            string result = ""; 
+            string pattern = "0123456789";
+    
+            Random myRndGenerator = new Random((int)DateTime.Now.Ticks);
+
+            for(int i=0; i < codeLength; i++) {
+                int mIndex = myRndGenerator.Next(pattern.Length);
+                result += pattern[mIndex];
+            }
+
+            id = Int32.Parse(result);
+            return id;
         }
 
     }

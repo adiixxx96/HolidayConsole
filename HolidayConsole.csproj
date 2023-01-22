@@ -10,5 +10,10 @@
   <ItemGroup>
     <PackageReference Include="Spectre.Console" Version="0.45.0" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Json/*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
