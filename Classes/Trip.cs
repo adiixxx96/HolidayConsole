@@ -34,6 +34,7 @@ namespace Classes {
             }
         }
 
+        //Generador de identificador aleatorio
         public int GenerateId(int codeLength) {
             int id = 0;
             string result = ""; 

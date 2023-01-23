@@ -4,6 +4,7 @@ namespace Utils {
 
     public class Utils {
 
+        //Método para comprobar si una variable es de tipo numérico
         public Boolean IsNumber(string option) {
             int i = 0;
             bool result = int.TryParse(option, out i);
@@ -13,6 +14,7 @@ namespace Utils {
             return false;
         }
 
+        //Métodos para enviar datos de las clases a los archivos Json
         public void SendUserData(List<User> allUsers, string userFile) {
             string userString = JsonSerializer.Serialize(allUsers);
             File.WriteAllText(userFile,userString);
