@@ -24,10 +24,12 @@ namespace Program {
         
             bool exit = false;
 
+            // El menú se mostrará hasta que el usuario salga de la aplicación
             while (!exit) {
                 
                 Console.WriteLine($"{System.Environment.NewLine}");
 
+                //Controlamos las opciones de menú que se muestran al usuario según si el usuario está logueado y tiene un usuario asignado
                 if (currentUser.Username != "") {
                     AnsiConsole.Markup($"[bold palegreen3]¡Hola {currentUser.Name}!, bienvenid@ a tu aplicación de vacaciones![/]");
                     Console.WriteLine($"{System.Environment.NewLine}");
@@ -67,6 +69,7 @@ namespace Program {
                     } 
                 }
 
+                //Ejecutamos métodos según la opción del menú. Controlamos que solo pueda acceder a las opciones que le corresponden.
                 int value = Int32.Parse(option);
                 switch(value) {
                     case 0:
@@ -151,6 +154,7 @@ namespace Program {
             }
         }
 
+        //Método para precargar los datos de nuestras clases desde archivos json
         public void LoadData() {
             string userString = File.ReadAllText(userFile);
             allUsers = JsonSerializer.Deserialize<List<User>>(userString);
@@ -160,6 +164,7 @@ namespace Program {
             allBookings = JsonSerializer.Deserialize<List<Booking>>(bookingString);
         }
 
+        //Método que loguea al usuario y lo asigna a la variable currentUser
         public void LogIn() {
             Console.WriteLine($"{System.Environment.NewLine}");
             AnsiConsole.Markup("[bold aquamarine1]INICIAR SESIÓN[/]");

@@ -25,6 +25,7 @@ namespace Classes {
             Paid = false;
         }
 
+        //Generador de código aleatorio
         public string GenerateCode(int codeLength) {
             string result = ""; 
             string pattern = "+-_#!?0123456789abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
